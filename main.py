@@ -1,8 +1,9 @@
 #Wais Patrick Assignment 3
+#This is the main branch, and I update it on GITHUB
 
 import pandas as pd
 import numpy as np
-# test test test Mehrdad Mehrdad 1234
+
 df = pd.read_csv('input.csv',delimiter=';',header=None, decimal=",")
 
 number_cluster = df.loc[0,0]
@@ -88,7 +89,8 @@ df2 = pd.DataFrame(np.array([[number_cluster,'' ,'' ], [k_means_array[0][0], k_m
 output = pd.DataFrame(data=output)
 result = df2.append(output)
 
-print(result)
+#Write to csv file with correct delimeter, decimal symbol and without row/column numbers
+result.to_csv('output.csv', index=False, sep=';',decimal='.',header=False)
 
 
 
